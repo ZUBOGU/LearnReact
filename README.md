@@ -9,7 +9,14 @@ npm run clean
 npm start
 ```
 
+### Generate Component
+```
+npm run generate component
+npm run generate container
+```
+
 ## reactandreduxes6
+Start the simple react app with facebook's create-react-app.
 ```
 npx create-react-app reactandreduxes6/
 ```
