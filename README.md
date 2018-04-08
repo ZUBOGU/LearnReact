@@ -8,3 +8,8 @@ npm run setup
 npm run clean
 npm start
 ```
+
+## reactandreduxes6
+```
+npx create-react-app reactandreduxes6/
+```
