@@ -16,20 +16,31 @@ scripts folder
 dependencies in package.json
 ```
 
-## Doc tools
+## Create Doc tools
 
 npm Packages for Documentation
 
 ```text
-react-docgen chokidar highlight.js npm-run-all
-Generate React component metadata Watch files
-Syntax highlighted code examples Run parallel tasks
+react-docgen: Generate React component metadata
+chokidar: Watch files
+highlight.js: Syntax highlighted code examples
+npm-run-all: Run parallel tasks
 ```
+
+Install those new dependencies
 
 ```bash
 npm install -D react-docgen@2.14.0 chokidar@1.6.1 npm-run-all@4.0.2
 npm install -S highlight.js@9.10.0
 ```
+
+### Steps
+
+1. add ```generateComponentData``` into ```/scripts```. New script to genearate component Data with help functions
+
+2. add scripts into ```package.json``` and modify ```start``.
+
+3. add a sample HelloWorld component. Run command ```npm prestart / npm prestart``` will generate metadata into ```config/componentData.js``` file
 
 ## Use react-boilerplate
 
