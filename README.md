@@ -36,15 +36,32 @@ npm install -S highlight.js@9.10.0
 
 ### Steps
 
-1. add ```generateComponentData``` into ```/scripts```. New script to genearate component Data with help functions
+1. add ```generateComponentData``` into ```/scripts```. New script to generate component Data with help functions
 
-2. add scripts into ```package.json``` and modify ```start``.
+2. add scripts into ```package.json``` and modify ```start```.
 
-3. add a sample HelloWorld component. Run command ```npm prestart / npm prestart``` will generate metadata into ```config/componentData.js``` file
+3. add a simple HelloWorld component. Run command ```npm prestart / npm prestart``` will generate metadata into ```config/componentData.js``` file.
+
+4. add a simple HelloWorld example in ```src/docs/examples```. Make sure follow the name pattern. Folder name matches the component Name
+
+5. add code files for generating documentation in ```src/doc``` folder.
+
+6. Comment out ```ModuleScopePlugin``` inside ```webpack.config```,  in oder to import file outside out ```/src``` folder(i.e. ```config/componentData.js``` for the component metadata file).
+
+7. Update ```index.js``` to render ```Docs.js``` and add style in ```index.css```.
+
+Code files explanations
+
+```text
+Docs.js //render Navigation, ComponentPage
+Navigation.js // return list components' names
+ComponentPage.js // return name, description, props, examples for each component
+Example.js // use CommonJS require to dynamically require examples, this examples folder is needed
+```
 
 ## Use react-boilerplate
 
-```https://www.reactboilerplate.com/``` Start the app with react-boilerplate.com
+Website: ```https://www.reactboilerplate.com/``` Start the app with react-boilerplate.com
 
 ```bash
 git clone --depth=1 https://github.com/react-boilerplate/react-boilerplate.git ScalableReactApp/
@@ -53,7 +70,7 @@ npm run clean
 npm start
 ```
 
-### Generate Componens
+### Generate Components
 
 ```bash
 npm run generate component
