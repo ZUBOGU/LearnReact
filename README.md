@@ -34,7 +34,7 @@ npm install -D react-docgen@2.14.0 chokidar@1.6.1 npm-run-all@4.0.2
 npm install -S highlight.js@9.10.0
 ```
 
-### Steps
+### Steps for rich automated documentation generation setup
 
 1. add ```generateComponentData.js``` into ```/scripts```. New script to generate component Data with help functions
 
@@ -52,6 +52,8 @@ npm install -S highlight.js@9.10.0
 
 8. Resolve examples importing long path from components. Add ```alias``` for ```webpack.config```. To resolve the issue of dup name of component in path (each component has a folder contains it with same name), add ```index.js``` in each folder to export the component.
 
+9. Syntax highlight for code. Add a new component ```CodeExample.js``` and use ```highlight.js``` library. Import style file for root ```index.js``` file.
+
 Code files explanations
 
 ```text
@@ -62,6 +64,19 @@ Navigation.js // return list components' names
 ComponentPage.js // return name, description, props, examples for each component
 Example.js // use CommonJS require to dynamically require examples, this examples folder is needed
 ```
+
+Potential Enhancements
+
+```text
+Search components
+Hide low priority components
+Group similar components // material-ui
+Live prop toggles // bluekit
+Markdown support for description
+Live code editing // react-toolbox, codesandbox
+```
+
+## Reusable Components
 
 ## Use react-boilerplate
 
