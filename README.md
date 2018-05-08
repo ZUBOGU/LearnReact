@@ -78,6 +78,57 @@ Live code editing // react-toolbox, codesandbox
 
 ## Reusable Components
 
+### Reusable component design
+
+- Avoid weak wrapper elements
+- Specify PropTypes and defaults
+- Don’t hard code HTML IDs
+- Consider config objects
+- Have a single responsibility
+
+### Atomic Design: Describe components with scientific terms
+
+- Multiple layers of abstraction
+- Encourages reuse
+- Convey component relationships
+- Convey intent
+
+## Atoms
+
+- Smallest building block
+- The foundation of a component library
+- Typically composed together
+- Demonstrate your base styles
+
+### Component folder structure
+
+Folder per component. Style. Tests. Theme. index.js.
+
+We have separate Docs and Demo during the documentation design.
+
+### Tips
+
+1. Honor the native API. Avoid userList. Instead users
+
+2. {...props} Use spread operator to transfer props.
+
+3. Use Spread with Destructuring.
+
+4. Create Formatting Components
+
+```&Javascript
+const Hello = ({ name, ...rest}) => <div {...rest}>Hi {name}!</div>
+```
+
+```&Javascript
+<Cash>6</Cash> $6.00
+<Cash showDecimal={false}>6.42</Cash>   $6
+```
+
+### Wrap HTML Primitives
+
+We’ll wrap <input> and <label> in this module.
+
 ## Use react-boilerplate
 
 Website: ```https://www.reactboilerplate.com/``` Start the app with react-boilerplate.com
