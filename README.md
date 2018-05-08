@@ -34,6 +34,32 @@ npm install -D react-docgen@2.14.0 chokidar@1.6.1 npm-run-all@4.0.2
 npm install -S highlight.js@9.10.0
 ```
 
+## Deploy to gh-pages
+
+Open your package.json and add a homepage field for your project:
+
+```text
+  "homepage": "https://myusername.github.io/my-app",
+```
+
+Add the following scripts in your package.json:
+
+```text
+  "scripts": {
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d build",
+   ...
+```
+
+Command doing the deploy to gh-pages
+
+```bash
+npm install gh-pages --save-dev
+npm run deploy
+```
+
+Setup of github SSH is needed.
+
 ### Steps for rich automated documentation generation setup
 
 1. add ```generateComponentData.js``` into ```/scripts```. New script to generate component Data with help functions
@@ -127,7 +153,7 @@ const Hello = ({ name, ...rest}) => <div {...rest}>Hi {name}!</div>
 
 ### Wrap HTML Primitives
 
-We’ll wrap <input> and <label> in this module.
+We’ll wrap `input` and `label` in this module.
 
 ## Use react-boilerplate
 
